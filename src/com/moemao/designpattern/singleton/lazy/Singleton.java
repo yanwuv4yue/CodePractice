@@ -2,19 +2,25 @@ package com.moemao.designpattern.singleton.lazy;
 
 public class Singleton
 {
-    private Singleton instance;
+    private static volatile Singleton instance;
 
     private Singleton()
     {
 
     }
 
-    public Singleton getInstance()
+    public static synchronized Singleton getInstance()
     {
-        if (this.instance == null)
+        if (instance == null)
         {
-            this.instance = new Singleton();
+            synchronized (Singleton.class)
+            {
+                if (instance == null)
+                {
+                    instance = new Singleton();
+                }
+            }
         }
-        return this.instance;
+        return instance;
     }
 }

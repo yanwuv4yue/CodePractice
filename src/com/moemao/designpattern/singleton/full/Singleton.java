@@ -2,15 +2,15 @@ package com.moemao.designpattern.singleton.full;
 
 public class Singleton
 {
-    private Singleton instance = new Singleton();
+    private static Singleton instance = new Singleton();
 
     private Singleton()
     {
 
     }
 
-    public Singleton getInstance()
+    public static Singleton getInstance()
     {
-        return this.instance;
+        return instance;
     }
 }
