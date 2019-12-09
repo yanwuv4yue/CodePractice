@@ -4,10 +4,13 @@ public class Client
 {
     public static void main(String[] args)
     {
-        ITargetX instance = (ITargetX) new ProxyFactory(new TargetX()).getInstance();
+        TargetX targetX = new TargetX();
+        targetX.setA("aaaaaaaa");
+
+        ITargetX instance = (ITargetX) new ProxyFactory(targetX).getInstance();
 
         instance.execute();
 
-        instance.print("hello dynamic proxy");
+        instance.print();
     }
 }

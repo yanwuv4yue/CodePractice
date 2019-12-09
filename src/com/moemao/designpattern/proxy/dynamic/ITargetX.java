@@ -4,5 +4,5 @@ public interface ITargetX
 {
     void execute();
 
-    void print(String string);
+    void print();
 }

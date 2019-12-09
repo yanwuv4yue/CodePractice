@@ -2,6 +2,13 @@ package com.moemao.designpattern.proxy.dynamic;
 
 public class TargetX implements ITargetX
 {
+    private String a = "";
+
+    public void setA(String a)
+    {
+        this.a = a;
+    }
+
     @Override
     public void execute()
     {
@@ -9,8 +16,8 @@ public class TargetX implements ITargetX
     }
 
     @Override
-    public void print(String string)
+    public void print()
     {
-        System.out.println("print..." + string);
+        System.out.println("print..." + this.a);
     }
 }
